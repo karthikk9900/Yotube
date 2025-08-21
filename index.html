@@ -124,12 +124,18 @@
 
     .create button {
         font-size: 15px;
-        padding: 5px 10px 5px 10px;
+        padding: 7px 10px 7px 10px;
         border-radius: 50px;
         background-color: rgba(48, 48, 48);
-        border-color: 1px solid rgba(48, 48, 48);
+        border: 1px solid ;
+        border-color: rgba(48, 48, 48);
         color: white;
         cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
 
 
     }
@@ -167,7 +173,7 @@
 
     .menu {
         height: 89dvh;
-        width: 15dvw;
+        width: 14dvw;
         background-color: rgb(15, 15, 15);
         position: fixed;
         top: 11dvh;
@@ -175,6 +181,7 @@
         overflow-y: scroll;
         overflow-x: hidden;
         scrollbar-width: none;
+        padding: 2px;
         
     }
 
@@ -261,7 +268,8 @@
 
     .logo:hover {
       background-color: #555;   /* background changes on hover */
-      border-color: #999;       /* border changes on hover */
+      border-color: #999;   
+      border-radius: 10px;    /* border changes on hover */
     }
 
     .paddingg{
@@ -312,7 +320,7 @@
 
     .main {
         height: 83dvh;
-        width: 85dvw;
+        width: 84dvw;
         background-color: rgb(15, 15, 15);
         position: fixed;
         top: 17dvh;
@@ -372,7 +380,9 @@
                 </div>
             </div>
             <div class="create">
-                <button type="button" align="center"><i class="fa-solid fa-plus"></i><b>Create</b></button>
+                <form action="">
+                    <button type="button" align="center"><i class="fa-solid fa-plus"></i><b>Create</b></button>
+                </form>
             </div>
             <div class="notification">
                 <i class="fa-regular fa-bell"></i>
