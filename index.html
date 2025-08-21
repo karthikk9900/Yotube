@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        /* color: rgb(255,255,255); */
+    }
+
+
+    .container {
+        height: 100dvh;
+        width: 100dvw;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .top {
+        height: 11dvh;
+        width: 85dvw;
+        background-color: rgb(15, 15, 15);
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .sb {
+        height: 100%;
+        width: 73%;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .searchbar {
+        height: 100%;
+        width: 90%;
+        background-color: rgb(15, 15, 15);
+        margin: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: first baseline;
+        align-items: center;
+        white-space: nowrap;
+        padding-left: 100px;
+
+    }
+    .search input{
+        background-color: rgb(15, 15, 15);
+        color: rgb(15, 15, 15);
+
+    }
+
+    .search {
+        font-size: 16px;
+        padding: 10px 140px 10px 20px;
+        /* background-color: rgb(0, 0, 0); */
+        border-radius: 25px 0px 0px 25px;
+        height: 100%;
+        width: 80%;
+    }
+
+    .icon {
+        font-size: 18px;
+        /* background-color: darkorange; */
+        padding: 9px 15px 9px 20px;
+        border-radius: 0px 25px 25px 0px;
+        cursor: pointer;
+        
+    }
+
+    .mic {
+        height: 50px;
+        width: 60px;
+        font-size: 18px;
+        /* background-color: blanchedalmond; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        margin: 2%;
+    }
+
+    .create {
+        height: 100%;
+        width: 12%;
+        /* background-color: darkkhaki; */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        /* margin-right: 1%; */
+    }
+
+    .create button {
+        font-size: 15px;
+        padding: 5px 10px 5px 10px;
+        border-radius: 50px;
+    }
+
+    .create i {
+        font-size: 20px;
+    }
+
+
+    .notification {
+        height: 100%;
+        width: 6%;
+        font-size: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255,255,255);
+        /* background-color: rgb(198, 93, 93); */
+    }
+
+    .pro {
+        height: 65%;
+        width: 4.4%;
+        background-color: rgb(255, 0, 0);
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+
+    .menu {
+        height: 89dvh;
+        width: 15dvw;
+        background-color: rgb(15, 15, 15);
+        position: fixed;
+        top: 11dvh;
+        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        
+    }
+
+    .menuyt {
+        position: fixed;
+        height: 11dvh;
+        width: 15dvw;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        color: rgb(255, 0, 0);
+        background-color: rgb(15, 15, 15);
+        
+    }
+
+    .mlogo{
+        font-size: 18px;
+        /* background-color: blue; */
+        color: white;
+        cursor: pointer;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .yt{
+        font-size: 23px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* background-color: rgb(109, 176, 142); */
+    }
+
+    .yt i{
+        font-size: 25px;
+    }
+
+    .yt p{
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .yt sup{
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    .menu h3{
+        color: white;
+    }
+
+
+    .logo {
+        height: 7%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        font-size: 23px;
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        background-color: rgb(15, 15, 15);
+        margin: 1px;
+        gap: 10px;
+        /* overflow: scroll; */
+
+    }
+
+    .logo i{
+        padding: 0px 0px 0px 20px;
+
+    }
+
+
+
+    .logo p {
+        font-size: 17px;
+    }
+
+    .paddingg{
+        padding: 0px 0px 0px 20px;
+
+    }
+
+    .logo img{
+        height: 23px;
+        width: 23px;
+        border-radius: 50%;
+
+    }
+
+    .filter {
+        height: 6dvh;
+        width: 85dvw;
+        background-color: rgb(15, 15, 15);
+        position: fixed;
+        top: 11dvh;
+        right: 0px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        /* margin: 10px; */
+    }
+
+    .category {
+        height: 90%;
+        width: auto;
+        padding: 0px 10px 0px 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: rgb(60, 53, 53);
+        white-space: nowrap;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        color: white;
+    }
+
+    .main {
+        height: 83dvh;
+        width: 85dvw;
+        background-color: rgb(15, 15, 15);
+        position: fixed;
+        top: 17dvh;
+        right: 0px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .videobox {
+        height: 55%;
+        width: 31%;
+        background-color: rgb(15, 15, 15);
+        margin: 1%;
+    }
+
+    .videobox img {
+        height: auto;
+        width: 100%;
+    }
+
+    .tittle {
+        font-weight: bold;
+        color: white;
+        /* padding: 0px; */
+        margin: 0px;
+        /* font-family: Arial, sans-serif; */
+    }
+
+    .channel {
+        /* font-family: Arial, sans-serif; */
+        color: white;
+        font-weight: 20;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="sb">
+                <div class="searchbar">
+                    <form action="">
+                        <input type="text" name="Search" id="search" class="search" placeholder="Search">
+                        <button type="submit" class="icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <div class="mic">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+            <div class="create">
+                <button type="button" align="center"><i class="fa-solid fa-plus"></i><b>Create</b></button>
+            </div>
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="pro">
+                <P>K</P>
+            </div>
+        </div>
+        <div class="menuyt">
+            <div class="mlogo">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="yt">
+                <i class="fa-brands fa-youtube"></i>
+                <p>YouTube<sup>IN</sup></p>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="logo">
+                <i class="fa-solid fa-house"></i>
+                <p><b>Home</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-play"></i>
+                <p><b>Shorts</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-tv"></i>
+                <p><b>Subscriptions</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-music"></i>
+                <p><b>Music</b></p>
+            </div>
+            <hr>
+            <div class="logo">
+                <p class="paddingg"><b>You </b> </p>
+                <p><b>></b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p><b>History</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-list"></i>
+                <p><b>Playlists</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-tv"></i>
+                <p><b>Your Videos</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-regular fa-clock"></i>
+                <p><b>Watch Later</b></p>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p><b>History</b></p>
+            </div>
+            <!-- <div class="logo">
+                <i class="fa-solid fa-user"></i>
+                <p>Profile</p>
+            </div> -->
+            <div class="logo">
+                <i class="fa-solid fa-download"></i>
+                <p><B>Downloads</B></p>
+            </div>
+            <hr>
+            <H3 class="paddingg">Subscriptions</H3>
+            <div class="logo">
+                <img src="whd_logo.png" alt="whd_logo">
+                <p><b>WebHost</b></p>
+            </div>
+            <div class="logo">
+                <img src="whd_logo.png" alt="whd_logo">
+                <p><b>WebHost</b></p>
+            </div>
+            <div class="logo">
+                <img src="whd_logo.png" alt="whd_logo">
+                <p><b>WebHost</b></p>
+            </div>
+            <div class="logo">
+                <img src="whd_logo.png" alt="whd_logo">
+                <p><b>WebHost</b></p>
+            </div>
+            <div class="logo">
+                <img src="whd_logo.png" alt="whd_logo">
+                <p><b>WebHost</b></p>
+            </div>
+            <div class="logo">
+                <img src="whd_logo.png" alt="whd_logo">
+                <p><b>WebHost</b></p>
+            </div>
+        </div>
+        <div class="filter">
+            <div class="category">
+                <p><b>ALL</b></p>
+            </div>
+            <div class="category">
+                <p><b>Music</b></p>
+            </div>
+            <div class="category">
+                <p><b>Telugu cinema</b></p>
+            </div>
+            <div class="category">
+                <p><b>Nani</b></p>
+            </div>
+            <div class="category">
+                <p><b>Anirudh Ravichander</b></p>
+            </div>
+            <div class="category">
+                <p><b>Podcasts</b></p>
+            </div>
+            <div class="category">
+                <p><b>Gaming</b></p>
+            </div>
+            <div class="category">
+                <p><b>Mixes</b></p>
+            </div>
+            <div class="category">
+                <p><b>AI</b></p>
+            </div>
+            <div class="category">
+                <p><b>Sudigalli Sudheer</b></p>
+            </div>
+            <div class="category">
+                <p><b>Computer Programming</b></p>
+            </div>
+            <div class="category">
+                <p><b>Cricket</b></p>
+            </div>
+            <div class="category">
+                <p><b>Recently Updated</b></p>
+            </div>
+            <div class="category">
+                <p><b>Recently Updated</b></p>
+            </div>
+            <div class="category">
+                <p><b>Recently Updated</b></p>
+            </div>
+            <div class="category">
+                <p><b>New To You</b></p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+            <div class="videobox">
+                <img src="tumbnail.webp" alt="tumbnail">
+                <p class="tittle">Complete Data Structures & Algorithms + Aptitude for Tech Placements</p>
+                <p class="channel">Apna College<i class="fa-solid fa-circle-check"></i><br>109K views • 2 months ago</p>
+            </div>
+          
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
